@@ -1,0 +1,16 @@
+{
+  "name": "get_vix_futures_hist",
+  "version": "1.0.0",
+  "description": "get futures historical data from vix central and insert in Postgres Table",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@rolangom",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "pg": "^8.6.0",
+    "puppeteer": "^10.1.0"
+  }
+}
