@@ -31,3 +31,11 @@ PGPASSWORD=
 PGDATABASE=yourdb
 PGPORT=5432
 ```
+
+Run with date
+
+```
+node index.js "from=2011-01-15&to=2011-01-30"
+```
+
+Or run `node index.js` without parameters to fill the whole series from the begining to current day.
