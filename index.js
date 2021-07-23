@@ -43,7 +43,7 @@ async function clearInputDate(page) {
     deviceScaleFactor: 1,
   });
 
-  const newDownloadPath = `./download_/` + Date.now().toString(36) + '_' + (Math.random() * 10).toFixed(0);
+  const newDownloadPath = `./download/` + Date.now().toString(36) + '_' + (Math.random() * 10).toFixed(0);
 
   await page._client.send('Page.setDownloadBehavior', {
     behavior: 'allow',
@@ -71,11 +71,10 @@ async function clearInputDate(page) {
   ensureValidDate(data, newDateFormated);
   console.log('Fin ' + dateStr);
   // delete file and folder
-  await fs.promises.rm(
-    successfullPath.slice(0, successfullPath.lastIndexOf('/')),
-    { recursive: true, force: true }
-  ).catch(err => console.error('ignore', err));
-  // await fs.promises.unlink(successfullPath).catch(err => console.error('ignore', err));
+  const folderToDelete = successfullPath.slice(0, successfullPath.lastIndexOf('/'))
+  console.log('folderToDelete', folderToDelete)
+  await fs.promises.rm(folderToDelete, { recursive: true, force: true })
+    .catch(err => console.error('ignore', err));
   return data;
 }
 
