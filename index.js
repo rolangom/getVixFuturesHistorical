@@ -50,7 +50,7 @@ async function clearInputDate(page) {
     downloadPath: path.resolve(newDownloadPath),
   });
   // 
-  await page.click('#ui-id-10'); // historical prices tab
+  await page.click('#ui-id-9'); // historical prices tab
   console.log('dateStr', dateStr);
   const newDateFormated = buildDate(dateStr);
   console.log('newDateFormated', newDateFormated);
